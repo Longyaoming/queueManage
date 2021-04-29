@@ -5,6 +5,7 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class getDatePeriod extends Vue {
     private dateList = [
+        //数据
         {value: "08:00-08:30"},
         {value:"08:30-09:00" },
         {value:"09:00-09:30" },
