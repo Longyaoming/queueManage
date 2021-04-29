@@ -17,3 +17,11 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 引入依赖
+vue-class-component
+vue-property-decorator
+less less-loader
+
+
+

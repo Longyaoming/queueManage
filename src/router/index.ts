@@ -1,24 +1,49 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
+import initInfo from '@/views/initInfo.vue'
+import appointment from '../views/appointment.vue'
+import operationCenter from '../views/operationCenter.vue'
+import aseal from '../views/aseal.vue'
+import credentialsDetails from '../views/credentialsDetails.vue'
+import appointList from '../views/appointList.vue'
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'initInfo',
+    component: initInfo
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import("@/views/Login/Login.vue")
+    path: '/appointment',
+    name: 'appointment',
+    component: appointment
   },
   {
-    path: '/password',
-    name: 'password',
-    component: () => import("@/views/Login/Password.vue")
+    path: '/operationCenter',
+    name: 'operationCenter',
+    component: operationCenter
+  },
+  {
+    path: '/aseal',
+    name: 'aseal',
+    component: aseal
+  },
+  {
+    path: '/credentialsDetails',
+    name: 'credentialsDetails',
+    component: credentialsDetails
+  },
+  {
+    path: '/credentialsDetails',
+    name: 'credentialsDetails',
+    component: credentialsDetails
+  },
+  {
+    path: '/appointList',
+    name: 'appointList',
+    component: appointList
   },
 ]
 

@@ -1,0 +1,55 @@
+/*less 全局变量 */
+
+// $pageHeaderColor : #ffffff; 
+// $themeColor: #2288e8;
+
+@mixin hw ($height, $width){
+    width: $width;
+    height: $height;
+};
+
+@mixin flex ($justify, $align){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+};
+
+//文字超出省略号显示
+// .textEllipsis {
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+// }
+
+// body {
+//     /*隐藏右边滚动条*/
+//     ::-webkit-scrollbar {
+//         display: none;
+//     }
+//     /*页面淡入淡出*/                                                                                                                                                                                                                                                                                                                                                                             
+//     .router-fade-enter-active, .router-fade-enter-active {
+//         transition: opacity 1s;
+//     }
+
+//     .router-fade-enter, .router-fade-leave-active {
+//         opacity: 0;
+//     }
+
+//     #app {
+//         font-family: 'PingFang SC','Microsoft YaHei','Helvetica Neue','Helvetica','Arial',sans-serif;
+//         -webkit-font-smoothing: antialiased;
+//         -moz-osx-font-smoothing: grayscale;
+//         color: #2c3e50;
+//         @include hw(100vh, 100vw);
+//     }
+//     a {
+//         color: inherit;
+//     }
+//     input,textarea, select {
+//         border: none;
+//     }
+//     img {
+//         max-width: 100%;
+//     }
+// }
+ 
