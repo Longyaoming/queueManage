@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 Vue.config.productionTip = false
-
+import '@/directive/vueLazyLoad'
 
 //引入rem适配js
 // import '@/lib/js/pxToRem.js'

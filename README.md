@@ -23,5 +23,39 @@ vue-class-component
 vue-property-decorator
 less less-loader
 
+### 移动端自适应配置
+具体配置：
+1.npm i autoprefixer postcss-pxtorem lib-flexible sass-loader -S
+2.vue.config.js增加：
+module.exports = {
+    css: {
+        requireModuleExtension: true,
+        loaderOptions: {
+            sass:{
+                prependData:`@import "~@/lib/css/customConfig.scss";`,  //配置的全局公用的scss文件模板
+            },
+            postcss: {
+                plugins: [
+                    require('autoprefixer')({
+                        overrideBrowserslist: ['Android >= 4.0', 'iOS >= 7']
+                    }),
+                    //px to rem 适配
+                    require('postcss-pxtorem')({
+                        rootValue: 37.5, //换算的基数
+                        propList: ['*'],
+                        unitPrecision: 3,
+                        minPixelValue: 2
+                    })
+                ]
+            }
+        }
+    },
+}
+3.在main.ts引入
+import 'lib-flexible';
+
+
+
+
 
 

@@ -3,7 +3,9 @@ const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);//生产�
 
 module.exports = {
     publicPath: IS_PROD ? './' : '/', // 公共路径
-
+    chainWebpack: config => {
+      config.resolve.extensions.merge([".ts", ".tsx", ".js", ",json"])
+    },
     css: {
         requireModuleExtension: true,
         loaderOptions: {
@@ -26,13 +28,6 @@ module.exports = {
           }
         }
       },
-      // pluginOptions: { // 第三方插件配置
-      //   'sass-resources-loader': {
-      //     preProcessor: 'scss',
-      //     patterns: [path.resolve(__dirname, 'src/lib/css/customConfig.scss')] // less所在文件路径
-      //   }
-      // },
-
       //配置跨域
       devServer: {
         overlay: { // 让浏览器 overlay 同时显示警告和错误

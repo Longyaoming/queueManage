@@ -25,7 +25,11 @@
           :busistopTime="item.busistopTime"
           :bussType="item.bussType"
           borderBottom
-        ></BusinessItem>
+        >
+          <template v-slot:info>
+            开放排号时间：
+          </template>
+        </BusinessItem>
       </div>
     </div>
     <van-calendar style="height:70%;" v-model="show" @confirm="onConfirm" />
@@ -36,7 +40,7 @@
 import { Mixins, Component, Vue } from 'vue-property-decorator';
 import BusinessItem from '@/components/BusinessItems.vue'
 import getBusinessData from '@/mixins/getBusinessData.vue'
-import  formatDate  from '@/lib/js/util.ts' 
+import  { formatDate }  from '@/lib/js/util' 
 
 @Component({
   components:{
@@ -62,8 +66,7 @@ export default class Appointment extends Mixins( getBusinessData ) {
 
     //点击进入信用运营中心列表
     private confirmBusiness(val:String):void{
-      console.log(`-----${val}`);
-      this.$router.push({name: "operationCenter"});
+      this.$router.replace({name: "operationCenter"});
     }
 
     //点击进入我的排号列表

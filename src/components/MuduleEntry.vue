@@ -3,8 +3,7 @@
     :style="{
         backgroundColor: setColor,
     }"
-    @click="touchEntry"
-    >
+    @click="touchEntry">
     <img :src="urlofimg"/>
     <div class="title">
         <slot></slot>

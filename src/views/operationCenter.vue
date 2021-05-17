@@ -35,7 +35,7 @@ export default class operationCenter extends Vue {
     }
 
     goSeal(item:any){
-        this.$router.push({name:"aseal",params:{info:item}});
+        this.$router.replace({name:"aseal",params:{info:item}});
     }
 }
 </script>

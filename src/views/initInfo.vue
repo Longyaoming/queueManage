@@ -1,9 +1,19 @@
 <template>
   <div class="home">
     <TopHeader left>大家好</TopHeader>
-    <div class="content">
-      <MuduleEntry @click="touchEntry(1)" bgColor="43b6cb" :urlofimg="oppointmentImg">预约业务</MuduleEntry>
-      <MuduleEntry @click="touchEntry(2)" bgColor="2fb497" :urlofimg="auditImg">审核通道</MuduleEntry>
+    <div class="content" v-my-lazy>
+      <MuduleEntry @click="touchEntry(1)" bgColor="43b6cb" :urlofimg="oppointmentImg">预约业务预约业务审核通</MuduleEntry>
+      <MuduleEntry @click="touchEntry(2)" bgColor="2fb497" :urlofimg="auditImg">审核通道审核通道</MuduleEntry>
+     
+        <!-- <div style="width: 100%;height: 99vh;background: red"></div>
+        <div style="width: 100%;height: 50vh;background: orange"></div>
+        <div style="width: 100%;height: 36vh;background: yellow"></div>
+        <div style="width: 100%;height: 102vh;background: green"></div>
+        <div style="width: 100%;height: 14vh;background: cyan"></div>
+        <div style="width: 100%;height: 50vh;background: blue"></div>
+        <div style="width: 100%;height: 100vh;background: purple"></div> -->
+    
+    
     </div>  
   </div>
 </template>
@@ -12,6 +22,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import TopHeader from '@/components/TopHeader.vue'
 import MuduleEntry from '@/components/MuduleEntry.vue'
+
 @Component({
   components: {
     TopHeader,MuduleEntry
@@ -20,7 +31,7 @@ import MuduleEntry from '@/components/MuduleEntry.vue'
 export default class Home extends Vue {
    private oppointmentImg = require("@/assets/img/mainimg_two.jpg")
    private auditImg = require("@/assets/img/mainimg_one.jpg")
-   
+   //点击挑战到对应模块
    touchEntry(index : Number){
      switch (index) {
        case 1:
@@ -34,11 +45,26 @@ export default class Home extends Vue {
          break;
      }
    }
+
+   
+   mounted(){
+     
+   }
+   
 }
 </script>
 
 <style lang="scss" scoped>
-.content{
-  padding:0 10px;
+.home{
+  width: 100%;
+  height:100%;
+  .content{
+    width: 100%;
+    height: 100%;
+    padding:10px;
+    box-sizing: border-box;
+    overflow: auto;
+  }
 }
+
 </style>

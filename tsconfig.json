@@ -10,6 +10,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "noImplicitThis": true, //设置this
     "sourceMap": true,
     "baseUrl": ".",
     "types": [

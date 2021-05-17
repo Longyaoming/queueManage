@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:300px;
+            height:300px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var obox = document.getElementsByClassName("box")[0];
+        // obox.onclick = function(){
+        //     console.log("1");
+        // }
+        // obox.onclick = debounce(test, 1000, true)
+        // obox.onclick = throttle(test, 1000)
+
+        function test(){
+            console.log(1)
+        }
+        //防抖
+        function debounce(fn, time, triggleNow){
+            let t = null;
+            var debounced =  function(){
+                let _this = this;
+                let args = arguments;
+
+                if(t){
+                    clearTimeout(t);
+                }
+                
+                if(triggleNow){
+                    let exec = !t;
+                    t = setTimeout(function(){
+                        t = null;
+                    }, time)
+
+                    if(exec){
+                        fn.apply(_this, arguments);
+                    }
+                }else{
+                    t = setTimeout(function(){
+                        fn.apply(_this,arguments)
+                    }, time)
+                }
+            }
+            return debounced;
+        }
+        //节流
+        function throttle(fn, time){
+            let t = null;
+            let beginTime = new Date().getTime();
+
+            return function(){
+                let _this = this;
+                let currTime = new Date().getTime();
+
+                clearTimeout(t);
+
+                if(currTime - beginTime >= time){
+                    beginTime = currTime;
+                    fn.apply(_this, arguments)
+                }else{
+                    t = setTimeout(() => {
+                        fn.apply(_this, arguments)
+                    }, time)
+                }
+            }
+        }
+
+        // sortArray();
+        //数组去重
+        function sortArray(){
+            let a = [1,2,3,1,2,true,true,"a","a"];
+            let b = [];
+            for(let i in a){
+                if(b.indexOf(a[i]) === -1){
+                    b.push(a[i]);
+                }
+            }
+            return b;
+        }
+
+        //去重
+        hasOwnproperty();
+        function hasOwnproperty(){
+            let a = [1,2,3,1,2,true,true,"a","a"];
+            let obj = {};
+            for(let i in a){
+                let o = a[i];
+                if(!obj.hasOwnProperty(o)){
+                    obj[o] = true;
+                }
+            }
+            return obj;
+        }
+    </script>
+</body>
+</html>

@@ -96,7 +96,7 @@ export default class Aseal extends Mixins( getDatePeriod ) {
 
     //点击排号
     queue(){
-        this.$router.push({name:'credentialsDetails',params:{info:this.info}})
+        this.$router.replace({name:'credentialsDetails',params:{info:this.info}})
     }
 }
 </script>

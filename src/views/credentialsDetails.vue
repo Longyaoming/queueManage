@@ -37,7 +37,12 @@ import LymCell from '@/components/LymCell.vue'
     }
 })
 export default class CredentialsDetails extends Vue {
-
+    //点击排号
+    queue(){
+        console.log("点击排号");
+        //跳转到选择业务列表页面
+        this.$router.replace({name:'appointment'});
+    }
 }
 </script>
 

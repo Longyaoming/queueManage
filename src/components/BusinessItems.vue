@@ -4,7 +4,10 @@
     <img :src="kindPicture">
     <div class="item-content">
         <div class="title">{{busitypeName}}</div>
-        <div class="info">开放排号时间：{{ busistartTime }}至{{ busistopTime }}</div>
+        <div class="info">
+            <slot name="info"></slot>
+            {{ busistartTime }}至{{ busistopTime }}
+        </div>
     </div>
     <van-icon name="arrow" />
   </div>
