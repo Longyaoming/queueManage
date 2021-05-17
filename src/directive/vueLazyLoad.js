@@ -14,7 +14,6 @@ Vue.directive("myLazy", (el) => {
          height += item.clientHeight;// 累计高度
          let obj = {pageNum: maxPage, height};
          arr.push(obj);
-
          if (maxPage > showPage) item.style.display = "none";// 隐藏不展示内容
       }
    })
@@ -31,7 +30,6 @@ Vue.directive("myLazy", (el) => {
    // 滚动监听
    el.onscroll = () => {
       if (mission) return;// 阻止连续触发
-
       let scrollTop = el.scrollTop; // 滚动高度
       let clientHeight = el.clientHeight; //可见高度
 
