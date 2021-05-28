@@ -45,6 +45,12 @@ const routes: Array<RouteConfig> = [
     name: 'appointList',
     component: appointList
   },
+  //组件列表主页面
+  {
+    path: '/showComponents',
+    name: 'showComponents',
+    component: () => import('@/views/showComponents.vue')
+  },
 ]
 
 const router = new VueRouter({

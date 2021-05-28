@@ -55,6 +55,18 @@ module.exports = {
 import 'lib-flexible';
 
 
+### 嵌入的html，ios手机小横条会挡住底部tab问题
+height: 'calc(100% - 5rem - constant(safe-area-inset-bottom)) !important',
+height: 'calc(100% - 5rem - env(safe-area-inset-bottom)) !important'
+height: 'calc(100% - 5rem - env(safe-area-inset-bottom)) !important'
+margin-bottom:calc(~'5px + constant(safe-area-inset-bottom')
+
+### 
+
+
+
+
+
 
 
 

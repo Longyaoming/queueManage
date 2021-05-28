@@ -50,3 +50,7 @@ module.exports = {
       },
     }
 }
+
+
+http://60.174.229.33:443/meeting/call/wdgl/page/00/dist3/static/js.zip
+

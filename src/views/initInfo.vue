@@ -4,7 +4,7 @@
     <div class="content" v-my-lazy>
       <MuduleEntry @click="touchEntry(1)" bgColor="43b6cb" :urlofimg="oppointmentImg">预约业务预约业务审核通</MuduleEntry>
       <MuduleEntry @click="touchEntry(2)" bgColor="2fb497" :urlofimg="auditImg">审核通道审核通道</MuduleEntry>
-     
+      <MuduleEntry @click="touchEntry(3)" bgColor="2fb497" :urlofimg="auditImg">自定义组件</MuduleEntry>
         <!-- <div style="width: 100%;height: 99vh;background: red"></div>
         <div style="width: 100%;height: 50vh;background: orange"></div>
         <div style="width: 100%;height: 36vh;background: yellow"></div>
@@ -12,9 +12,7 @@
         <div style="width: 100%;height: 14vh;background: cyan"></div>
         <div style="width: 100%;height: 50vh;background: blue"></div>
         <div style="width: 100%;height: 100vh;background: purple"></div> -->
-    
-    
-    </div>  
+    </div> 
   </div>
 </template>
 
@@ -31,6 +29,7 @@ import MuduleEntry from '@/components/MuduleEntry.vue'
 export default class Home extends Vue {
    private oppointmentImg = require("@/assets/img/mainimg_two.jpg")
    private auditImg = require("@/assets/img/mainimg_one.jpg")
+   private list:any []= [];
    //点击挑战到对应模块
    touchEntry(index : Number){
      switch (index) {
@@ -41,6 +40,8 @@ export default class Home extends Vue {
        case 2:
          console.log("跳转到审核业务");
          break;
+        case 3:
+          this.$router.push({name:"showComponents"})
        default:
          break;
      }
@@ -48,7 +49,7 @@ export default class Home extends Vue {
 
    
    mounted(){
-     
+    
    }
    
 }
